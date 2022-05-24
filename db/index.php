@@ -8,7 +8,7 @@
   <body>
     <?php
       try {
-        # xxx.xxx.xxx.xxx はプライベート IP アドレス
+        # ホストはEC2の場合はプライベート IP アドレス、RDSならエンドポイント
         $dbh = new PDO('mysql:host=xxx.xxx.xxx.xxx;dbname=simple_blog', "root", "root");
 
         $sth = $dbh->prepare("SELECT * from posts");
